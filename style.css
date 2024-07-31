@@ -1,77 +1,114 @@
-// Initialize the Variables
-let songIndex = 0;
-let audioElement = new Audio('songs/1.mp3');
-let masterPlay = document.getElementById('masterPlay');
-let myProgressBar = document.getElementById('myProgressBar');
-let gif = document.getElementById('gif');
-let masterSongName = document.getElementById('masterSongName');
-let songItems = Array.from(document.getElementsByClassName('songItem'));
+/* importing two Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+body{
+    background-color: antiquewhite;
+}
 
-let songs = [
-    // ... (your song data)
-];
+*{
+    margin: 0;
+    padding: 0;
+}
 
-// Function to play the next song
-const playNextSong = () => {
-    if (songIndex < songs.length - 1) {
-        songIndex++;
-        playSong();
-    } else {
-        songIndex = 0; // Loop back to the first song
-        playSong();
-    }
-};
+nav{
+    font-family: 'Ubuntu', sans-serif;
+}
 
-// Function to play a specific song
-const playSong = () => {
-    audioElement.src = songs[songIndex].filePath;
-    masterSongName.innerText = songs[songIndex].songName;
-    audioElement.currentTime = 0;
-    audioElement.play();
-    masterPlay.classList.remove('fa-play-circle');
-    masterPlay.classList.add('fa-pause-circle');
-    gif.style.opacity = 1;
-};
+nav ul{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    height: 65px;
+    background-color: black;
+    color: white;
+}
+.brand img{
+    width: 44px;
+    padding: 0 8px;
+}
 
-// Handle play/pause click
-masterPlay.addEventListener('click', () => {
-    if (audioElement.paused || audioElement.currentTime <= 0) {
-        playSong();
-    } else {
-        audioElement.pause();
-        masterPlay.classList.remove('fa-pause-circle');
-        masterPlay.classList.add('fa-play-circle');
-        gif.style.opacity = 0;
-    }
-});
+.brand {
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.3rem;
+}
 
-// Listen to the 'ended' event for playing the next song
-audioElement.addEventListener('ended', playNextSong);
+.container{
+    min-height: 72vh;
+    background-color: black;
+    color: white;
+   font-family: 'Varela Round', sans-serif;
+   display: flex;
+   margin: 23px auto;
+   width: 70%;
+   border-radius: 12px;
+   padding: 34px;
+   background-image: url('https://img.freepik.com/free-photo/headphones-african-american-woman-s-portrait-isolated-dark-studio-background-multicolored-neon-light-beautiful-female-model-concept-human-emotions-facial-expression-sales-ad-fashion_155003-34470.jpg?size=626&ext=jpg&ga=GA1.1.1137434956.1722443338&semt=ais_hybrid');
+   background-size: cover;
+}
 
-// ... (your existing event listeners)
+.bottom{
+    position: sticky;
+    bottom: 0;
+    height: 130px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+}
 
-// Function to initialize song items
-const initializeSongItems = () => {
-    songItems.forEach((element, i) => {
-        element.getElementsByTagName("img")[0].src = songs[i].coverPath;
-        element.getElementsByClassName("songName")[0].innerText = songs[i].songName;
-        element.getElementsByClassName("songItemPlay")[0].addEventListener('click', (e) => {
-            makeAllPlays();
-            songIndex = i;
-            e.target.classList.remove('fa-play-circle');
-            e.target.classList.add('fa-pause-circle');
-            playSong();
-        });
-    });
-};
+.icons{
+    margin-top: 14px; 
+}
+.icons i{
+    cursor: pointer;
+}
 
-// Function to make all plays inactive
-const makeAllPlays = () => {
-    Array.from(document.getElementsByClassName('songItemPlay')).forEach((element) => {
-        element.classList.remove('fa-pause-circle');
-        element.classList.add('fa-play-circle');
-    });
-};
+#myProgressBar{
+    width: 80vw; 
+    cursor: pointer;
+}
 
-// Initialize song items
-initializeSongItems();
+.songItemContainer{
+    margin-top: 74px;
+}
+
+.songItem{
+    height: 50px;
+    display: flex;
+    background-color: white;
+    
+    color: black;
+    margin: 12px 0;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 34px;
+}
+
+.songItem img{
+    width: 43px;
+    margin: 0 23px;
+    border-radius: 34px;
+}
+
+.timestamp{
+    margin: 0 23px;
+}
+
+.timestamp i{
+    cursor: pointer;
+}
+
+.songInfo{
+    position: absolute;
+    left: 10vw;
+    font-family: 'Varela Round', sans-serif;
+}
+
+/* .songInfo img{
+    opacity: 0;
+    transition: opacity 0.4s ease-in;
+} */
