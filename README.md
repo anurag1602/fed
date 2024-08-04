@@ -35,23 +35,11 @@ To run this project locally, you need to have the following installed:
 1. Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/yourusername/spotify-like-web-page.git
+git clone https://github.com/anurag1602/fed.git
 
 
-cd spotify-like-web-page
+cd fed
 
-## Screenshots
-
-![Home Page](path/to/homepage-screenshot.png)
-*Home Page*
-
-![Search Functionality](path/to/search-screenshot.png)
-*Search Functionality*
-
-![Playlist Management](path/to/playlist-screenshot.png)
-*Playlist Management*
-
-## Project Structure
 
 
 
@@ -60,9 +48,6 @@ cd spotify-like-web-page
 Contributions are welcome! If you have any ideas or improvements, feel free to open an issue or submit a pull request.
 
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgements
 
