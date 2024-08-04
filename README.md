@@ -18,27 +18,7 @@ Welcome to the Spotify-like Web Page project! This web-based music streaming int
 - **HTML5**: For structuring the web page with semantic elements.
 - **CSS3**: For styling the application using modern CSS techniques like Flexbox and Grid.
 - **JavaScript**: For handling user interactions and dynamically updating the UI.
-
-## Getting Started
-
-
-### Prerequisites
-
-To run this project locally, you need to have the following installed:
-
-- A web browser (Google Chrome, Mozilla Firefox, etc.)
-- Code editor (Visual Studio Code, Sublime Text, etc.)
-
-
-### Installation
-
-1. Clone the repository to your local machine:
-
-```bash
-git clone https://github.com/anurag1602/fed.git
-
-
-cd fed
+  
 
 
 
